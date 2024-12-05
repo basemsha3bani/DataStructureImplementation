@@ -9,14 +9,16 @@ namespace TestProject2
         [TestMethod]
         public void TestMethod1()
         {
-            BasicLinkedListImplementation x = new BasicLinkedListImplementation();
+            LinkedListImplementationWithExtraFunctions x = new LinkedListImplementationWithExtraFunctions();
             x.Append(1);
             x.Append(2);
             x.Prepend(0);
-            var elemets = x.print();
-            x.delete(2);
-            elemets=x.print();
-
+            var elemets = x.Print();
+            x.Delete(2);
+            Element element1=x.find(10);
+            Element element2 = x.find(0);
+            x.reverse();
+            elemets = x.Print();
         }
     }
 }

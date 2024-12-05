@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicLinkedList", "LinkedListImplementation\BasicLinkedList.csproj", "{58BE1686-25EE-46F6-B158-4AEA4FB470DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject2", "TestProject2\TestProject2.csproj", "{5BCC3CF6-DC24-49FE-9C91-9C120EFE3547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedListTestProject", "TestProject2\LinkedListTestProject.csproj", "{5BCC3CF6-DC24-49FE-9C91-9C120EFE3547}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

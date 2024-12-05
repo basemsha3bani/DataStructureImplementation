@@ -49,7 +49,7 @@ namespace LinkedList
 
         }
 
-        public void delete(int value)
+        public void Delete(int value)
         {
             Element element = head,previous=null;
             while(element.value!=value) 
@@ -68,7 +68,7 @@ namespace LinkedList
 
         }
 
-        public List<string>  print()
+        public List<string>  Print()
         {
             List<string> elements = new List<string>();
             Element element = head;
@@ -84,18 +84,6 @@ namespace LinkedList
 
 
     }
-     public class Element
-    {
-        
-        public Element(int v, Element value1)
-        {
-            this.value = v;
-            this.next = value1;
-        }
 
-        public int value {  get; set; }  
-        public Element next { get; set; }
-
-    }
 
 }
