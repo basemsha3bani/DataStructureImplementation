@@ -5,7 +5,13 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicLinkedList", "LinkedListImplementation\BasicLinkedList.csproj", "{58BE1686-25EE-46F6-B158-4AEA4FB470DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedListTestProject", "TestProject2\LinkedListTestProject.csproj", "{5BCC3CF6-DC24-49FE-9C91-9C120EFE3547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject2\TestProject.csproj", "{5BCC3CF6-DC24-49FE-9C91-9C120EFE3547}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleLinkedList", "DoubleLinkedListImplementation\DoubleLinkedList.csproj", "{5D780F0A-86A8-4413-99E1-0CEE79AD0C39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{668402D7-F910-4ADE-9512-05F7D67C6E97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "StackImplementation\Stack.csproj", "{B78F970A-2DBC-49CD-AF02-68B5FF41D5B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{5BCC3CF6-DC24-49FE-9C91-9C120EFE3547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BCC3CF6-DC24-49FE-9C91-9C120EFE3547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BCC3CF6-DC24-49FE-9C91-9C120EFE3547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D780F0A-86A8-4413-99E1-0CEE79AD0C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D780F0A-86A8-4413-99E1-0CEE79AD0C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D780F0A-86A8-4413-99E1-0CEE79AD0C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D780F0A-86A8-4413-99E1-0CEE79AD0C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{668402D7-F910-4ADE-9512-05F7D67C6E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{668402D7-F910-4ADE-9512-05F7D67C6E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{668402D7-F910-4ADE-9512-05F7D67C6E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{668402D7-F910-4ADE-9512-05F7D67C6E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B78F970A-2DBC-49CD-AF02-68B5FF41D5B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78F970A-2DBC-49CD-AF02-68B5FF41D5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78F970A-2DBC-49CD-AF02-68B5FF41D5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78F970A-2DBC-49CD-AF02-68B5FF41D5B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

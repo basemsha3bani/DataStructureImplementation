@@ -12,6 +12,8 @@
         public int value {  get; set; }  
         public Element next { get; set; }
 
+        public Element previous { get; set; }
+
     }
 
 }

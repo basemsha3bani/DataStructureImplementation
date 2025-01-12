@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.FileIO;
 using System;
 using System.ComponentModel;
+using System.Net;
 using System.Runtime.Serialization;
 
 namespace LinkedList
@@ -23,49 +24,20 @@ namespace LinkedList
         }
 
 
-        public void reverse()
+      public void reverse()
         {
-            //1,2,3,4 head=1 
-            //2,1,3,4 
-            //2,3,1,4 head=4
-            //2,3,4,1
-            //3,2,4,1
-            //3,4,2,1
-            //4,3,2,1
+            Element element = head,prev = null, next;
 
-
-            Element temp = head, next,prev=null;
-
-            while (temp!= null)
+            while (element!=null)
             {
-                next = temp.next;
-                temp.next=prev;
-
-                prev = temp;
-                temp = next;
-
-
-
-              
-
+                next = element.next;
+                element.next = prev;
+                prev = element; 
+                element = next;
             }
             head = prev;
-
-            
-
-
-
         }
-     Element  swap(Element element,Element element2)
-        {
-            Element temp = element;
-            element = element2;
-            
-            element2 = temp;
-           
-            return element;
-
-        }
+     
            
 
                 

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BasicLinkedList">
+      <HintPath>..\LinkedListImplementation\bin\Debug\net8.0\BasicLinkedList.dll</HintPath>
+    </Reference>
+    <Reference Include="Common">
+      <HintPath>..\LinkedListImplementation\bin\Debug\net8.0\Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TestProject2
 {
     [TestClass]
-    public class UnitTest1
+    public class LinkedListTest
     {
         [TestMethod]
         public void TestMethod1()
@@ -20,5 +20,7 @@ namespace TestProject2
             x.reverse();
             elemets = x.Print();
         }
+
+       
     }
 }
