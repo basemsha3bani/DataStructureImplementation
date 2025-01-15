@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DoubleLinkedListImplementation\DoubleLinkedList.csproj" />
     <ProjectReference Include="..\LinkedListImplementation\BasicLinkedList.csproj" />
+    <ProjectReference Include="..\Queue\Queue.csproj" />
     <ProjectReference Include="..\StackImplementation\Stack.csproj" />
   </ItemGroup>
 
