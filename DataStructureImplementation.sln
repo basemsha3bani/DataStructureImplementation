@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "StackImplementation\Stack.csproj", "{B78F970A-2DBC-49CD-AF02-68B5FF41D5B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue", "Queue\Queue.csproj", "{A4D37473-FE24-4414-88B2-824B2B19A10C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "Queue\Queue.csproj", "{A4D37473-FE24-4414-88B2-824B2B19A10C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeImplementation", "TreeImplementation\TreeImplementation.csproj", "{1651C9CF-5B38-48A5-A9E0-8562EDBBF20D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A4D37473-FE24-4414-88B2-824B2B19A10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D37473-FE24-4414-88B2-824B2B19A10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D37473-FE24-4414-88B2-824B2B19A10C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1651C9CF-5B38-48A5-A9E0-8562EDBBF20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1651C9CF-5B38-48A5-A9E0-8562EDBBF20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1651C9CF-5B38-48A5-A9E0-8562EDBBF20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1651C9CF-5B38-48A5-A9E0-8562EDBBF20D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
