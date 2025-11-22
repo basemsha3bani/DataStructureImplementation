@@ -1,4 +1,5 @@
-﻿using LinkedList;
+﻿
+using LinkedList;
 using Stack.Interface;
 using System;
 using System.Collections.Generic;

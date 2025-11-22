@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="BasicLinkedList">
       <HintPath>..\LinkedListImplementation\bin\Debug\net8.0\BasicLinkedList.dll</HintPath>
     </Reference>
