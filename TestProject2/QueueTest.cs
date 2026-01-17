@@ -1,11 +1,12 @@
 
+using Common;
 using LinkedList;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Queue.Implementation;
 using Queue.Interface;
 using System.Linq;
 
-namespace TestProject2
+namespace TestProject
 {
     [TestClass]
     public class QueueTest
@@ -23,19 +24,19 @@ namespace TestProject2
         [TestMethod]
         public void RemoveMaxTest()
         {
-            IQueue x = new ArrayQueueImplementation();
+            ArrayQueueImplemenationWithExtraFunctions x = new ArrayQueueImplemenationWithExtraFunctions();
             x.Enqueue(1);
             x.Enqueue(3);
             x.Enqueue(2);
             x.Enqueue(3);
             QueueApplication.removeMax(x);
             Assert.AreEqual(x.Max().value, 2);
-            x = new LinkedListQueueImplemntation();
-            x.Enqueue(1);
-            x.Enqueue(3);
-            x.Enqueue(2);
-            x.Enqueue(3);
-            QueueApplication.removeMax(x);
+           LinkedListQueueImplementationWithExtraFunctions y = new LinkedListQueueImplementationWithExtraFunctions();
+            y.Enqueue(1);
+            y.Enqueue(3);
+            y.Enqueue(2);
+            y.Enqueue(3);
+            QueueApplication.removeMax(y);
             Assert.AreEqual(x.Max().value, 2);
 
 
@@ -52,7 +53,7 @@ namespace TestProject2
          * If the maximum value appears more than once, all occurrences of the maximum should be removed from the queue
          * */
 
-        public static void removeMax(IQueue arrayQueue)
+        public static void removeMax(IQuequeWithExtraFunctions arrayQueue)
         {
 
             var max = arrayQueue.Max();

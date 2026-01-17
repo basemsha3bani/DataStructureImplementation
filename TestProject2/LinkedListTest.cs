@@ -1,7 +1,9 @@
+using BasicLinkedList.CustomTypes;
+using Common;
 using LinkedList;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestProject2
+namespace TestProject
 {
     [TestClass]
     public class LinkedListTest
@@ -21,6 +23,19 @@ namespace TestProject2
             elemets = x.Print();
         }
 
-       
+        [TestMethod]
+        public void TestMethod2()
+        {
+            DoubleEndedQueue doubleEndedQueue = new DoubleEndedQueue();
+            doubleEndedQueue.AddFront(2);
+            doubleEndedQueue.AddFront(1);
+            doubleEndedQueue.AddRear(3);
+
+            var elemets = doubleEndedQueue.Print();
+            Assert.AreEqual("2", elemets[1]);
+            Assert.AreEqual("3", elemets[2]);
+        }
+
+
     }
 }

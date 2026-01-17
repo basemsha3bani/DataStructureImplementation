@@ -1,7 +1,9 @@
+using BasicLinkedList.CustomTypes;
+using Common;
 using LinkedList;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestProject2
+namespace TestProject
 {
     [TestClass]
     public class DoubleLinkedListTest
@@ -21,8 +23,9 @@ namespace TestProject2
             Element element1 = x.find(10);
             Element element2 = x.find(0);
         }
-
        
-      
+
+
+
     }
 }

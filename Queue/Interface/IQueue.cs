@@ -13,9 +13,6 @@ namespace Queue.Interface
         void Enqueue(int value);
         void Dequeue();
 
-        Element find(int value);
-
-        Element Max();
-        void deQueueMax(Element max);
+      
     }
 }

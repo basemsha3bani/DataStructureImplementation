@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -15,14 +16,15 @@ namespace LinkedList
 
         public void Prepend(int value)
         {
-            Element element = new Element(value, null);
+            
             if (head == null)
             {
-                head = new Element(value, null);
-              
+                this.Append(value);
+
             }
             else
             {
+                Element element = new Element(value, null);
                 element.next = head;
                 head = element;
             }

@@ -1,13 +1,14 @@
+using Common;
 using LinkedList;
 using Queue.Implementation;
 using Queue.Interface;
 
-public static class ArrayQueueApplication
+public static class QueueProblems
 {
     
    
 
-    public static void  removeMax(IQueue arrayQueue)
+    public static void  removeMax(IQuequeWithExtraFunctions arrayQueue)
     {
        
         var max=arrayQueue.Max();
