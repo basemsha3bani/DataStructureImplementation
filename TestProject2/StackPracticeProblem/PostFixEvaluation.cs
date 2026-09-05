@@ -38,146 +38,63 @@ namespace TestProject.StackPracticeProblem
             }
             return stack.Pop().ToString();
         }
-        
+
     }
-    public class PostFixGenerator
+
+
+
+
+
+
+
+
+
+
+
+
+public class PostFixGenerator
     {
-       
-
-        public  string GeneratePostfix(string expression)
+        public string GeneratePostfix(string expression)
         {
-            Stack<string> stack = new Stack<string>();
+            expression = expression.Replace(" ", "");
+            Stack<char> ops = new Stack<char>();
+            StringBuilder output = new StringBuilder();
 
-            
-            expression = CheckExpressionBetweenParentheses(expression);
-            expression = CheckExpressionMultipliedOrDivided(expression);
-            expression = CheckExpressionAddedOrSubtracted(expression);
-            expression = this.moveOperatorToEndOfExpression(expression);
-            
-            return expression;
-        }
-
-
-
-
-        private string CheckExpressionBetweenParentheses(string expression)
-        {
-            int index = 0;
-            while (index < expression.Length)
+            foreach (char c in expression)
             {
-
-                if (index + 5 <= expression.Length)
+                if (char.IsDigit(c))
                 {
-                    if (Regex.Match(expression.Substring(index, 5), @"[(]\d[+]\d[)]|[(]\d[\/]\d[)]|[(]\d[*]\d[)]|[(]\d[-]\d[)]").Success)
-                    {
-                        string subexpression = expression.Substring(index, 5);
-                        string temp = subexpression.Substring(1, 1) + subexpression.Substring(3, 1) + subexpression.Substring(2, 1);
-
-                        expression = expression.Replace(subexpression, temp);
-                       
-
-
-                    }
+                    output.Append(c);
                 }
-                index++;
-            }
-            return expression;
-        }
-        private string CheckExpressionMultipliedOrDivided(string expression)
-        {
-            int index = 0;
-            while (index < expression.Length)
-            {
-
-                if (index + 3 <= expression.Length)
+                else if (c == '(')
                 {
-                    if (Regex.Match(expression.Substring(index, 3), @"\d[\/]\d[)]|\d[*]\d").Success)
-                    {
-                        string subexpression = expression.Substring(index, 3);
-                        string temp = subexpression.Substring(0, 1) + subexpression.Substring(2, 1) + subexpression.Substring(1, 1);
-
-                        expression = expression.Replace(subexpression, temp);
-
-
-                    }
+                    ops.Push(c);
                 }
-                index++;
-            }
-            return expression;
-        }
-        private string CheckExpressionAddedOrSubtracted(string expression)
-        {
-            int index = 0;
-            while (index < expression.Length)
-            {
-
-                if (index + 3 <= expression.Length)
+                else if (c == ')')
                 {
-                    if (Regex.Match(expression.Substring(index, 3), @"\d[-]\d[)]|\d[+]\d").Success)
-                    {
-                        string subexpression = expression.Substring(index, 3);
-                        string temp = subexpression.Substring(0, 1) + subexpression.Substring(2, 1) + subexpression.Substring(1, 1);
-
-                        expression = expression.Replace(subexpression, temp);
-
-
-                    }
+                    while (ops.Peek() != '(')
+                        output.Append(ops.Pop());
+                    ops.Pop(); // remove '('
                 }
-                index++;
-            }
-            return expression;
-        }
-        private string moveOperatorToEndOfExpression(string expression)
-        {
-            int index = 0;
-            while (index < expression.Length)
-            {
-                string subexpression;
-                if (index + 2 <= expression.Length)
+                else // operator
                 {
-                    if (Regex.Match(expression.Substring(index, 2), @"(?<=[+]|[-]|[*]|[\/])(\d+)").Success)
-                    {
-                        subexpression = expression.Substring(index,1);
-                        string temp;
-                        if (index + 4 <= expression.Length)
-                        {
-                             temp = expression.Substring(index + 1, 3) + subexpression;
-                            expression = expression.Replace(expression.Substring(index, 4), temp);
-                        }
-                        else
-                        {
-                            temp = expression.Substring(index + 1) + subexpression;
-                            expression = expression.Replace(expression.Substring(index, 2), temp);
-                        }
-
-                            
-                    }
-                    else
-                    {
-                        if (Regex.Match(expression.Substring(index, 1), @"(?<=[+]|[-]|[*]|[\/])(\d+)").Success)
-                        {
-                            subexpression = expression.Substring(index, 1);
-                            string temp = subexpression + expression.Substring(index - 1);
-                            expression = expression.Replace(expression.Substring(index ,3), temp);
-                        }
-                    }
-
-
-
-                    
-
-                   
-                   
+                    while (ops.Count > 0 && Precedence(ops.Peek()) >= Precedence(c))
+                        output.Append(ops.Pop());
+                    ops.Push(c);
+                }
             }
-                index++;
 
-            }
-            return expression;
+            while (ops.Count > 0)
+                output.Append(ops.Pop());
+
+            return output.ToString();
         }
 
-        
+        private int Precedence(char op)
+        {
+            if (op == '*' || op == '/') return 2;
+            if (op == '+' || op == '-') return 1;
+            return 0;
+        }
     }
-
-  
-
 }
