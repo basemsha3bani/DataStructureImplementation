@@ -4,7 +4,9 @@ using LinkedList;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Queue.Implementation;
 using Queue.Interface;
+using System;
 using System.Linq;
+using TestProject.QueuePracticeProblem.AirportServiceSimulation;
 
 namespace TestProject
 {
@@ -29,46 +31,38 @@ namespace TestProject
             x.Enqueue(3);
             x.Enqueue(2);
             x.Enqueue(3);
-            QueueApplication.removeMax(x);
+            QueueMaxElementsOperations.removeMax(x);
             Assert.AreEqual(x.Max().value, 2);
-           LinkedListQueueImplementationWithExtraFunctions y = new LinkedListQueueImplementationWithExtraFunctions();
+            LinkedListQueueImplementationWithExtraFunctions y = new LinkedListQueueImplementationWithExtraFunctions();
             y.Enqueue(1);
             y.Enqueue(3);
             y.Enqueue(2);
             y.Enqueue(3);
-            QueueApplication.removeMax(y);
+            QueueMaxElementsOperations.removeMax(y);
             Assert.AreEqual(x.Max().value, 2);
 
 
         }
-
-    }
-
-    public static class QueueApplication
-    {
-
-        /*write a static method named removeMax 
-         * that takes an unbounded queue of integers as its parameter.
-         * The method removes the maximum value from the queue keeping other elements in their original locations in the queue. 
-         * If the maximum value appears more than once, all occurrences of the maximum should be removed from the queue
-         * */
-
-        public static void removeMax(IQuequeWithExtraFunctions arrayQueue)
+        ///Test for Airport Service Simulation
+        [TestMethod]
+        public void AirportServiceSimulationTest()
         {
-
-            var max = arrayQueue.Max();
-            Element temp = arrayQueue.find(max.value);
-
-            while (temp != null)
+            Airport airport = new Airport();
+            airport.StartService();
+            bool KeepCheck = true;
+            while (KeepCheck)
             {
 
-                arrayQueue.deQueueMax(temp);
-
-                temp = arrayQueue.find(max.value);
-                var x = arrayQueue;
+                if (airport.TimeInService > 2)
+                {
+                    KeepCheck = false;
+                }
             }
+            Assert.IsTrue(airport.PlanesInQueue > 0, "Planes should have landed during the simulation.");
 
-
+            // Add assertions to verify the expected behavior of the airport service simulation
         }
+
+
     }
 }

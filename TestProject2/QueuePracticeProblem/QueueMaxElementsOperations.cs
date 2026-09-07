@@ -3,7 +3,7 @@ using LinkedList;
 using Queue.Implementation;
 using Queue.Interface;
 
-public static class QueueProblems
+public static class QueueMaxElementsOperations
 {
     
    
