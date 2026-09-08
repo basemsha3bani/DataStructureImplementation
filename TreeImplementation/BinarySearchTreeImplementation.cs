@@ -15,7 +15,20 @@ namespace TreeImplementation
         {
 
         }
-        
+        public bool Search(T value)
+        {
+            if (isEmpty()) return false;
+
+            T rootVal = GetRoot();
+            if (rootVal.CompareTo(value) == 0) return true;
+            else if (value.CompareTo(rootVal) < 0)
+                return ((BinarySearchTreeImplementation<T>)getLeft()).Search(value);
+            else
+                return ((BinarySearchTreeImplementation<T>)getRight()).Search(value);
+        }
+
+        public void Delete(T value) { /* we can do this later */ }
+    
         private void addNode(T e)
         {
             this.root = e;

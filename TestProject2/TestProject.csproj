@@ -24,4 +24,10 @@
     <ProjectReference Include="..\TreeImplementation\TreeImplementation.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="dictionary.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

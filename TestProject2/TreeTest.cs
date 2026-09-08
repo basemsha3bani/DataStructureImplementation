@@ -1,5 +1,6 @@
 ﻿using Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SpellChecker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,20 @@ namespace TestProject
             Assert.AreEqual('b', result[1].value);
             result= new PostOrderTraversal<charElement>().Traverse(binarySearchTree);
             Assert.AreEqual('f', result[1].value);
+        }
+        [TestMethod]
+        public void TestMethod2()
+        {
+            var checker = new SpellCheckerService(@"dictionary.txt");
+            
+            string word = "Elephant";
+            string wrongWord = "Elephent";
+            Assert.AreEqual(true, checker.IsCorrect(word));
+            Assert.AreEqual(false,checker.IsCorrect(wrongWord));
+            var suggestions = checker.GetSuggestions(wrongWord, 1);
+
+            Assert.AreEqual("elephant", suggestions[0].ToLower());
+
         }
     }
 }
