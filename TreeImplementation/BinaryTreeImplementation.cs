@@ -10,12 +10,12 @@ using System.Xml.Linq;
 
 namespace TreeImplementation
 {
-    public class BinaryTreeImplementation
+    public class BinaryTreeImplementation<T> where T :class
     {
-        public BinaryTreeImplementation? left, right;
+        public BinaryTreeImplementation<T>? left, right;
         
         protected int depth;
-        protected charElement root;
+        protected T root;
 
         public BinaryTreeImplementation( )
         {
@@ -25,7 +25,7 @@ namespace TreeImplementation
             this.root = null;
         }
 
-        public BinaryTreeImplementation(BinaryTreeImplementation left, BinaryTreeImplementation right, charElement element)
+        public BinaryTreeImplementation(BinaryTreeImplementation<T> left, BinaryTreeImplementation<T> right, T element)
         {
             this.left = left;
             this.right = right;
@@ -33,10 +33,10 @@ namespace TreeImplementation
            
         }
 
-        public BinaryTreeImplementation(charElement key)
+        public BinaryTreeImplementation(T key)
         {
-            this.left = new BinaryTreeImplementation();
-            this.right = new BinaryTreeImplementation();
+            this.left = new BinaryTreeImplementation<T>();
+            this.right = new BinaryTreeImplementation<T>();
             this.root = key;
           
 
@@ -49,7 +49,7 @@ namespace TreeImplementation
         {
             return !this.isEmpty()&&this.left.isEmpty()&&this.right.isEmpty();  
         } 
-        public charElement GetRoot() {
+        public T GetRoot() {
             if (!isEmpty()) {
                 return this.root;   
             }
@@ -61,21 +61,21 @@ namespace TreeImplementation
             else return 1 + Math.Max(left.getHeight(), right.getHeight());
         }
 
-        public BinaryTreeImplementation getLeft()
+        public BinaryTreeImplementation<T> getLeft()
         {
             if (isEmpty()) throw new InvalidOperationException();
             else return left;
         }
 
-        public BinaryTreeImplementation getRight()
+        public BinaryTreeImplementation<T>    getRight()
         {
             if (isEmpty()) throw new InvalidOperationException();
             else return right;
         }
 
-        public charElement destroy()
+        public T destroy()
         {
-              charElement temp = this.root;
+              T temp = this.root;
             this.root = null;
             this.left = null;
             this.right = null;

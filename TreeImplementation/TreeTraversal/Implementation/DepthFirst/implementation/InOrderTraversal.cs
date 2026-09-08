@@ -7,20 +7,20 @@ using TreeImplementation.TreeTraversal.Implementation.DepthFirst.Abstraction;
 
 namespace TreeImplementation.TreeTraversal.Implementation.DepthFirst.implementation
 {
-    public class InOrderTraversal : DepthFirstImplementation
+    public class InOrderTraversal<T> : DepthFirstImplementation<T> where T : class,IComparable<T>
     {
-        public override List<char> Traverse(BinarySearchTreeImplementation binarySearchTree)
+        public override List<T> Traverse(BinarySearchTreeImplementation<T> binarySearchTree)
         {
             if(binarySearchTree.isEmpty())
             {
-                return new List<char>();
+                return new List<T>();
             }
             else
             {
-                List<char> result = new List<char>();
-                result.AddRange(Traverse((BinarySearchTreeImplementation)binarySearchTree.getLeft()));
-                result.Add(binarySearchTree.GetRoot().value);
-                result.AddRange(Traverse((BinarySearchTreeImplementation)binarySearchTree.getRight()));
+                List<T> result = new List<T >();
+                result.AddRange(Traverse((BinarySearchTreeImplementation<T>)binarySearchTree.getLeft()));
+                result.Add(binarySearchTree.GetRoot());
+                result.AddRange(Traverse((BinarySearchTreeImplementation<T>)binarySearchTree.getRight()));
                 return result;
             }
         }

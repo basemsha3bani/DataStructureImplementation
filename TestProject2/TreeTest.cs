@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Common;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,18 +16,18 @@ namespace TestProject
         [TestMethod]
         public void TestMethod1()
         {
-            BinarySearchTreeImplementation binarySearchTree = new BinarySearchTreeImplementation();
+            BinarySearchTreeImplementation<charElement> binarySearchTree = new BinarySearchTreeImplementation<charElement>();
             binarySearchTree.insert(new Common.charElement('a', null));
             binarySearchTree.insert(new Common.charElement('b', null));
             binarySearchTree.insert(new Common.charElement('d', null));
             binarySearchTree.insert(new Common.charElement('c', null));
             binarySearchTree.insert(new Common.charElement('f', null));
-            List<char> result = new List<char>();
-            result= new InOrderTraversal().Traverse(binarySearchTree);
-            Assert.AreEqual('a', result[0]);
-            Assert.AreEqual('b', result[1]);
-            result= new PostOrderTraversal().Traverse(binarySearchTree);
-            Assert.AreEqual('f', result[1]);
+            List<charElement> result = new List<charElement>();
+            result= new InOrderTraversal<charElement>().Traverse(binarySearchTree);
+            Assert.AreEqual('a', result[0].value);
+            Assert.AreEqual('b', result[1].value);
+            result= new PostOrderTraversal<charElement>().Traverse(binarySearchTree);
+            Assert.AreEqual('f', result[1].value);
         }
     }
 }

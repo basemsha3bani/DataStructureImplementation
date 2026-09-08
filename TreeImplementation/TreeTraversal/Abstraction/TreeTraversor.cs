@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TreeImplementation.TreeTraversal.Abstraction
 {
-    internal abstract class TreeTraversor
+    internal abstract class TreeTraversor<T> where T : class, IComparable<T>
     {
         public TreeTraversor()
         {
         }
-        internal abstract void traverse(BinarySearchTreeImplementation binarySearchTree);
+        internal abstract void traverse(BinarySearchTreeImplementation<T> binarySearchTree);
     }
 }
  

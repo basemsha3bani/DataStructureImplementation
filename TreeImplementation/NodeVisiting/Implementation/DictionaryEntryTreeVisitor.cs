@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TreeImplementation.NodeVisiting.Implementation
 {
-    internal class DictionaryEntryTreeVisitor : Abstraction.AbstractVisitor
+    internal class DictionaryEntryTreeVisitor<T> : Abstraction.AbstractVisitor<T> where T : class, IComparable<T>
     {
-        public override void Visit(BinaryTreeImplementation node)
+        public override void Visit(BinaryTreeImplementation<T> node)
         {
             throw new NotImplementedException();
         }

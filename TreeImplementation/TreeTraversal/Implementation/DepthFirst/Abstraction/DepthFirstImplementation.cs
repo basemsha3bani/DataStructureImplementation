@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TreeImplementation.TreeTraversal.Implementation.DepthFirst.Abstraction
 {
-    public abstract class DepthFirstImplementation
+    public abstract class DepthFirstImplementation<T> where T : class,IComparable<T>
     {
-        abstract public List<char> Traverse(BinarySearchTreeImplementation binarySearchTree);
+        abstract public List<T> Traverse(BinarySearchTreeImplementation<T> binarySearchTree);
     }
 }

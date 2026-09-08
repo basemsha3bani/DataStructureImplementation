@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TreeImplementation.TreeTraversal.Implementation.BreadthFirst
 {
-    internal class breadthFirstTraversal : TreeTraversal.Abstraction.TreeTraversor
+    internal class breadthFirstTraversal<T> : TreeTraversal.Abstraction.TreeTraversor<T> where T : class, IComparable<T>
     {
-        internal override void traverse(BinarySearchTreeImplementation binarySearchTree)
+        internal override void traverse(BinarySearchTreeImplementation<T> binarySearchTree)
         {
             throw new NotImplementedException();
         }

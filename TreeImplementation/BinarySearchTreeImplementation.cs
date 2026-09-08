@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TreeImplementation
 {
-    public class BinarySearchTreeImplementation : BinaryTreeImplementation
+    public class BinarySearchTreeImplementation<T> : BinaryTreeImplementation<T> where T :class,IComparable<T>
 
     {
         public BinarySearchTreeImplementation()
@@ -16,30 +16,30 @@ namespace TreeImplementation
 
         }
         
-        private void addNode(charElement e)
+        private void addNode(T e)
         {
-            this.root = new charElement(e.value, null);
-            this.left = new BinarySearchTreeImplementation();
-            this.right = new BinarySearchTreeImplementation();
+            this.root = e;
+            this.left = new BinarySearchTreeImplementation<T>();
+            this.right = new BinarySearchTreeImplementation<T>();
         }
         public void delete()
         {
 
         }
 
-        public void insert(charElement e)
+        public void insert(T e)
         {
             if (isEmpty())
                 addNode(e);
             else
             {
-               charElement root= GetRoot();
+               T root= GetRoot();
                 if (root.CompareTo(e) == 0)
                     throw new IllegalArgumentException("duplicate key");
                 else if (e.CompareTo(root) < 0)
-                  ((BinarySearchTreeImplementation) getLeft()).insert(e);
+                  ((BinarySearchTreeImplementation<T>) getLeft()).insert(e);
                 else
-                    ((BinarySearchTreeImplementation)getRight()).insert(e);
+                    ((BinarySearchTreeImplementation<T>)getRight()).insert(e);
             }
         }
 

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TreeImplementation.NodeVisiting.Abstraction
 {
-    internal abstract class AbstractVisitor
+    internal abstract class AbstractVisitor<T> where T : class, IComparable<T>  
     {
-        public abstract void Visit(BinaryTreeImplementation node);
+        public abstract void Visit(BinaryTreeImplementation<T> node);
     }
 }
