@@ -12,9 +12,9 @@ namespace Queue.Interface
 
     {
 
-        public Element find(int value);
-        public  Element Max();
-      public  void deQueueMax(Element max);
+        public GenericDataTypeElement find(int value);
+        public  GenericDataTypeElement Max();
+      public  void deQueueMax(GenericDataTypeElement max);
 
        
     }

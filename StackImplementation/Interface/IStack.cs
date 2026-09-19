@@ -12,6 +12,6 @@ namespace Stack.Interface
     {
          int count { get; set; }
          void push(int value);
-         Element pop();
+         GenericDataTypeElement pop();
     }
 }

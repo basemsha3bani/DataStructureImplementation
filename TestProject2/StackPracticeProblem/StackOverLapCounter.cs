@@ -14,8 +14,8 @@ namespace TestProject.StackPracticeProblem
     {
 internal static int countStackOverLap(IStack stack,IStack stack2)
         {
-            Element element1 = stack.pop();
-            Element element2 = stack2.pop();
+            GenericDataTypeElement element1 = stack.pop();
+            GenericDataTypeElement element2 = stack2.pop();
             while (element1 != null && element2 != null)
             {
                 if(element1.value == element2.value)

@@ -10,11 +10,11 @@ namespace BasicLinkedList.CustomTypes
 {
     public class DoubleEndedQueue
     {
-        BasicLinkedListImplementation basicLinked;
+        ElementLinkedListImplementation basicLinked;
 
         public DoubleEndedQueue()
         {
-            basicLinked = new BasicLinkedListImplementation();
+            basicLinked = new ElementLinkedListImplementation();
         }
 
 
@@ -32,13 +32,13 @@ namespace BasicLinkedList.CustomTypes
 
         internal void removeFront()
         {
-            int value= basicLinked.head.value;
-            basicLinked.Delete(value);
+            int value=(int) basicLinked.head.value;
+            basicLinked.delete(value);
         }
         internal void removeRear(Element e)
         {
-            int value = basicLinked.tail.value;
-            basicLinked.Delete(value);
+            int value =(int) basicLinked.tail.value;
+            basicLinked.delete(value);
            
         }
 

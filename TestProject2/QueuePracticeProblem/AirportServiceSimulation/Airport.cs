@@ -13,7 +13,7 @@ namespace TestProject.QueuePracticeProblem.AirportServiceSimulation
        
         public int PlanesInQueue { get
             {
-                return PlaneQueue.Count;
+                return PlaneQueue.count;
             }
         
         }
@@ -22,7 +22,7 @@ namespace TestProject.QueuePracticeProblem.AirportServiceSimulation
         int nextArrivalTime;
         int serviceTimeInMinutes = 2; // This is the time it takes to service a plane
         int timeToDequeue = 0; // This is the time it takes to dequeue a plane from the queue
-        private List<Plane> PlaneQueue  = new List<Plane>();
+        private Queue.Implementation.LinkedListQueueImplemntation PlaneQueue  = new LinkedListQueueImplemntation();
         
         // Add this field to the PlanePathWay class to provide a random number generator instance
         private static readonly Random random = new Random();
@@ -47,7 +47,8 @@ namespace TestProject.QueuePracticeProblem.AirportServiceSimulation
             if (tick == nextArrivalTime)
             {
                 // Simulate a new plane arrival
-                Plane newPlane = new Plane { Id = tick, ArrivalTime = tick };
+                Plane newPlane = new Plane(tick);
+                newPlane.ArrivalTime = tick;
                 LandPlane(newPlane);
 
 
@@ -57,9 +58,10 @@ namespace TestProject.QueuePracticeProblem.AirportServiceSimulation
             }
             if (tick == timeToDequeue)
             {
-                if (PlaneQueue.Count > 0)
+                if (PlaneQueue.count > 0)
                 {
-                    RemovePlaneFromQueue(PlaneQueue[0]);
+                  
+                   PlaneQueue.Dequeue();
                 }
                   
              }
@@ -75,12 +77,8 @@ namespace TestProject.QueuePracticeProblem.AirportServiceSimulation
         public void LandPlane(Plane plane)
         {
            
-            PlaneQueue.Add(plane);
-        }
-        public void RemovePlaneFromQueue(Plane plane)
-        {
-            PlaneQueue.Remove(plane);
-        }
+            PlaneQueue.Enqueue(plane.ArrivalTime);
+       }
 
         public void RunService()
         {

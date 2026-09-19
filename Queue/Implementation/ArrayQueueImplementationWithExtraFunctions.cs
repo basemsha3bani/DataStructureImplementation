@@ -14,11 +14,13 @@ namespace Queue.Implementation
     {
         
 
-        public Element find(int value)
+        public GenericDataTypeElement find(int value)
         {
-            foreach (Element item in ArrayList)
+            int itemValue;
+            foreach (GenericDataTypeElement item in ArrayList)
             {
-                if (item.value == value)
+                itemValue = (int)item.value;
+                if (itemValue == value)
                 {
                     return item;
                 }
@@ -27,27 +29,32 @@ namespace Queue.Implementation
 
 
         }
-        public Element Max()
+        public GenericDataTypeElement Max()
         {
             if (ArrayList.Count == 0)
             {
                 return null;
             }
-            Element maxElement = (Element)ArrayList[0];
-            foreach (Element item in ArrayList)
+            GenericDataTypeElement maxElement = (GenericDataTypeElement)ArrayList[0];
+            int maxElementValue, ElementValue;
+            maxElementValue = (int)maxElement.value;
+
+            foreach (GenericDataTypeElement item in ArrayList)
             {
-                if (item.value > maxElement.value)
+                ElementValue=(int)item.value;
+                if (ElementValue > maxElementValue)
                 {
                     maxElement = item;
+                    maxElementValue = ElementValue;
                 }
             }
             return maxElement;
         }
 
-        public void deQueueMax(Element max)
+        public void deQueueMax(GenericDataTypeElement max)
         {
-            Element temp;
-            temp = (Element)ArrayList[0];
+            GenericDataTypeElement temp;
+            temp = (GenericDataTypeElement)ArrayList[0];
             Dequeue();
 
             ArrayList[0] = max;

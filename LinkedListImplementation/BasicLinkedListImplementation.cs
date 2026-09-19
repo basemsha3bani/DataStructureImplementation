@@ -9,14 +9,27 @@ using System.Xml.Serialization;
 
 namespace LinkedList
 {
-    public class BasicLinkedListImplementation
+    public abstract class BasicLinkedListImplementation<T> where T : class
     {
-        public Element head { get; set; }
-        public Element tail  { get; set; }
+        public T head { get; set; }
+        public T tail  { get; set; }
 
-        public void Prepend(int value)
+        public abstract void Prepend(object value);
+
+        public abstract void Append(object value);
+
+
+        public abstract void delete(object value);
+
+        public abstract List<string> Print();
+
+
+    }
+    public class ElementLinkedListImplementation : BasicLinkedListImplementation<GenericDataTypeElement>
+    {
+        public override void Prepend(object value)
         {
-            
+
             if (head == null)
             {
                 this.Append(value);
@@ -24,17 +37,17 @@ namespace LinkedList
             }
             else
             {
-                Element element = new Element(value, null);
+                GenericDataTypeElement element = new GenericDataTypeElement(value, null);
                 element.next = head;
                 head = element;
             }
 
-            
+
 
         }
-        public void Append(int value)
+        public override void Append(object value)
         {
-            Element element = new Element(value, null);
+            GenericDataTypeElement element = new GenericDataTypeElement(value, null);
             if (head == null)
             {
                 head = element;
@@ -43,7 +56,7 @@ namespace LinkedList
             }
             else
             {
-              
+
                 tail.next = element;
             }
 
@@ -51,29 +64,27 @@ namespace LinkedList
 
         }
 
-        public void Delete(int value)
+        public override void delete(object value)
         {
-            Element element = head,previous=null;
-            while(element.value!=value) 
-            
+            GenericDataTypeElement element = head, previous = null;
+            while (element.value != value)
+
             {
-               previous = element;
-               element = element.next;  
-                //0 1 
+                previous = element;
+                element = element.next;
+
 
             }
             previous.next = element.next;
 
 
 
-
-
         }
 
-        public List<string>  Print()
+        public override List<string> Print()
         {
             List<string> elements = new List<string>();
-            Element element = head;
+            GenericDataTypeElement element = head;
             while (element != null)
             {
                 elements.Add(element.value.ToString());
@@ -83,9 +94,7 @@ namespace LinkedList
 
 
         }
-
-
     }
 
 
-}
+  }

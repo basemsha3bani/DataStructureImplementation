@@ -20,8 +20,9 @@ namespace Queue.Implementation
         public void Dequeue()
         {
            
-            Element headelement = LinkedList.head;
+            GenericDataTypeElement headelement = LinkedList.head;
             LinkedList.head = headelement.next;
+            count--;
 
 
 
@@ -30,21 +31,23 @@ namespace Queue.Implementation
 
         public void Enqueue(int value)
         {
-            Element element = new Element(value, null);
+            GenericDataTypeElement element = new GenericDataTypeElement(value, null);
             if (LinkedList==null)
             {
                 LinkedList = new LinkedListImplementationWithExtraFunctions();
                 LinkedList.head = element;
                 LinkedList.tail = element;
+                count++;
                 return;
             }
-            Element tmp = LinkedList.head;
+            GenericDataTypeElement tmp = LinkedList.head;
             while(tmp.next!=null)
             {
                 tmp = tmp.next;
             }
             tmp.next = element;
             LinkedList.tail = element;
+            count++;
             
         }
 

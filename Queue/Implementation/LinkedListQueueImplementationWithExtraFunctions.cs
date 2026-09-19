@@ -6,7 +6,7 @@ namespace Queue.Implementation
 {
     public class LinkedListQueueImplementationWithExtraFunctions : LinkedListQueueImplemntation, IQuequeWithExtraFunctions
     {       
-        public Element find(int value)
+        public GenericDataTypeElement find(int value)
         {
             if (LinkedList == null)
 
@@ -14,13 +14,16 @@ namespace Queue.Implementation
                 return null;
             }
            
-            Element currentElement = (Element)LinkedList.head;
-            Element target = null;
+            GenericDataTypeElement currentElement = (GenericDataTypeElement)LinkedList.head;
+            GenericDataTypeElement target = null;
+            int elementValue = value;
+            int currentElementValue;
             while (currentElement.next != null)
             {
-                if (currentElement.value!=value)
+                currentElementValue =(int) currentElement.value;
+                if (currentElementValue!=elementValue)
                 {
-                    currentElement = currentElement.next;
+                    currentElement = currentElement.next; 
                 }
                 else
                 {
@@ -32,18 +35,21 @@ namespace Queue.Implementation
             return target;
           
         }
-        public Element Max()
+        public GenericDataTypeElement Max()
         {
              if (LinkedList == null)
                
                     {
                 return null;
             }
-            Element maxElement = (Element)LinkedList.head;
-            Element currentElement = maxElement;
+            GenericDataTypeElement maxElement = (GenericDataTypeElement)LinkedList.head;
+            GenericDataTypeElement currentElement = maxElement;
+            int maxElementValue, nextElementValue;
             while (currentElement.next!=null)
             {
-                if (maxElement.next.value>maxElement.value)
+                maxElementValue = (int) maxElement.value;
+                nextElementValue = (int)maxElement.next.value;
+                if (maxElementValue>nextElementValue)
                 {
                     maxElement = maxElement.next;
                 }
@@ -52,14 +58,14 @@ namespace Queue.Implementation
             return maxElement;
         }
 
-        public void deQueueMax(Element max)
+        public void deQueueMax(GenericDataTypeElement max)
         {
 
             //1-3-2-3
 
 
-            Element head = LinkedList.head;
-            Element tmp = head;
+            GenericDataTypeElement head = LinkedList.head;
+            GenericDataTypeElement tmp = head;
             while (tmp != null)
             {
                 if (tmp.next != null)
@@ -78,5 +84,7 @@ namespace Queue.Implementation
 
             }
         }
+
+       
     }
 }

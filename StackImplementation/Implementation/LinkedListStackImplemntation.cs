@@ -16,10 +16,10 @@ namespace Stack.Implementation
         public int count { get; set; }
         private LinkedListImplementationWithExtraFunctions LinkedList;
 
-        public Element pop()
+        public GenericDataTypeElement pop()
         {
-            Element tail = LinkedList.tail;
-            Element tmp = LinkedList.head;
+            GenericDataTypeElement tail = LinkedList.tail;
+            GenericDataTypeElement tmp = LinkedList.head;
             while (tmp!= null)
             {
                 if(tmp.next== tail)
@@ -37,7 +37,7 @@ namespace Stack.Implementation
 
         public void push(int value)
         {
-            Element elemen = new Element(value, null);
+            GenericDataTypeElement elemen = new GenericDataTypeElement(value, null);
             if (LinkedList==null)
             {
                 LinkedList = new LinkedListImplementationWithExtraFunctions();
@@ -45,7 +45,7 @@ namespace Stack.Implementation
                 LinkedList.tail = elemen;
                 return;
             }
-            Element tmp = LinkedList.head;
+            GenericDataTypeElement tmp = LinkedList.head;
             while (tmp.next != LinkedList.tail && tmp.next != null)
             {
                 tmp = tmp.next;

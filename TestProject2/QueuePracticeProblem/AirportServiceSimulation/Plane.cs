@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace TestProject.QueuePracticeProblem.AirportServiceSimulation
 {
-    public class Plane
+    public class Plane:GenericDataTypeElement
     {
-        public int Id { get; set; }
-        public int ArrivalTime { get; set; }
+        public Plane(int Id) : base(Id,null)
+        {
+        }
+
+       public int ArrivalTime { get; set; }
     }
 
 }

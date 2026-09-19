@@ -25,7 +25,7 @@ namespace Queue.Implementation
 
         public void Enqueue(int v)
         {
-            Element element = new Element(v, null);
+            GenericDataTypeElement element = new GenericDataTypeElement(v, null);
             ArrayList.Add(element); 
         }
        

@@ -12,14 +12,14 @@ public static class QueueMaxElementsOperations
     {
        
         var max=arrayQueue.Max();
-        Element temp = arrayQueue.find(max.value);
+        GenericDataTypeElement temp = arrayQueue.find((int)max.value);
         
         while (temp!=null)
         {
 
             arrayQueue.deQueueMax(temp);
             
-            temp= arrayQueue.find(max.value);
+            temp= arrayQueue.find((int) max.value);
             var x = arrayQueue;
         }
 

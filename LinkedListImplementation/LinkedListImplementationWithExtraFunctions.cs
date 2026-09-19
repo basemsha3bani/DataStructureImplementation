@@ -7,14 +7,18 @@ using System.Runtime.Serialization;
 
 namespace LinkedList
 {
-    public class LinkedListImplementationWithExtraFunctions: BasicLinkedListImplementation
+    public class LinkedListImplementationWithExtraFunctions: ElementLinkedListImplementation 
     {
-        public Element find(int value)
+      
+        public GenericDataTypeElement find(object value)
         {
-            Element element = head;
+            GenericDataTypeElement element = head;
+            int ElementValue;
+            int searchValue = (int)value;
             while (element!=null)
             {
-                if(element.value==value)
+                 ElementValue = (int)element.value;
+                if (ElementValue ==searchValue)
                 {
                     break;
                 }
@@ -24,10 +28,14 @@ namespace LinkedList
             return element;
         }
 
-
-      public void reverse()
+        public override void Prepend(object value)
         {
-            Element element = head,prev = null, next;
+            throw new NotImplementedException();
+        }
+
+        public void reverse()
+        {
+            GenericDataTypeElement element = head,prev = null, next;
 
             while (element!=null)
             {

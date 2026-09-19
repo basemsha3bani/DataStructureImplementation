@@ -16,13 +16,13 @@ namespace Stack.Implementation
         public int count { get ; set ; }
         protected ArrayList ArrayList = new ArrayList();
 
-        public Element pop()
+        public GenericDataTypeElement pop()
         {
             if(ArrayList.Count==0)
             {
                 return null;
             }   
-            Element temp = (Element) ArrayList[ArrayList.Count - 1];
+            GenericDataTypeElement temp = (GenericDataTypeElement) ArrayList[ArrayList.Count - 1];
              ArrayList.Remove(temp);
             return temp;
 
